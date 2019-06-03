@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
-	<?php while ( have_posts() ) : the_post(); ?>?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<?php the_title();  ?>
@@ -25,7 +25,7 @@
 		<?php next_posts_link( 'older' ); ?>
 
 <?php else : ?>
-	
+
 		This post cannot be found.
 
 <?php endif; ?>
