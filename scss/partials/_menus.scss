@@ -1,0 +1,232 @@
+/*-----------------------------------------------------------------------------------*/
+/* Menus
+/*-----------------------------------------------------------------------------------*/
+
+ul.menu {
+  &,
+  ul,
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.menu-toggle {
+  @media (max-width: $breakpoint-sm-max) {
+    display: block;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    display: none;
+  }
+
+  a {
+    @media (max-width: $breakpoint-sm-max) {
+      display: block;
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+      text-indent: 100%;
+      white-space: nowrap;
+      width: 80px;
+
+      &:after {
+        color: $black;
+        content: '\2807';
+        font-size: 40px;
+        line-height: 1;
+        position: absolute;
+          top: 50%;
+          right: ($spacer);
+        text-indent: 0;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}
+
+.menu-main-menu-container {
+  @media (max-width: $breakpoint-sm-max) {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    display: block;
+  }
+}
+
+#menu-main-menu {
+
+  .menu-item-description {
+    display: none;
+  }
+
+  > li {
+
+    @media (min-width: $breakpoint-md-min) {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 500;
+      margin-left: ($spacer);
+    }
+
+    a {
+      color: $black;
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: $green;
+      }
+    }
+
+    & {
+      &:active,
+      &:focus,
+      &:hover {
+        > a {
+          color: $green;
+        }
+      }
+    }
+
+    > .sub-menu {
+      @media (min-width: $breakpoint-md-min) {
+        background: $white;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, .1);
+        display: none;
+        flex-flow: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: -40px;
+        padding-top: ($spacer * 2);
+        padding-bottom: ($spacer * 2);
+        position: absolute;
+          top: 100%;
+          left: 0;
+        width: 100%;
+        z-index: 1;
+
+        > li {
+          display: inline-block;
+          margin-left: ($spacer);
+          margin-right: ($spacer);
+
+          > a {
+            color: $green;
+          }
+
+          > .sub-menu {
+            font-weight: 400;
+            margin-top: ($spacer / 2);
+          }
+        }
+      }
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      &:active,
+      &:focus,
+      &:hover {
+        > .sub-menu {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+#menu-homepage-menu {
+  text-align: center;
+
+  li {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+
+    @media (max-width: $breakpoint-sm-max) {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: ($spacer);
+      }
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      display: inline-block;
+      margin-left: ($spacer);
+      margin-right: ($spacer);
+    }
+  }
+
+  a {
+    color: $black;
+    display: inline-block;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $lightblue;
+    }
+  }
+
+  .menu-image {
+    display: block;
+    height: 73px;
+    margin: 0 auto;
+    padding: 0;
+    width: auto;
+  }
+
+  .menu-image-title {
+    display: block;
+    padding-top: ($spacer / 2);
+  }
+}
+
+.container {
+  .main {
+    ul.menu {
+      display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+
+      li {
+        display: block;
+        margin: 0 0 ($spacer * 2) 0;
+        width: 45%;
+
+        a {
+          border: 1px solid $mediumgray;
+          color: $black;
+          display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+          font-size: 16px;
+          padding: ($spacer * 2);
+          text-align: center;
+
+          .menu-image-title {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+          }
+
+          &:hover {
+            color: $mediumblue;
+          }
+        }
+
+        img {
+          display: block;
+          height: 70px;
+          margin: 0 auto ($spacer) auto;
+          width: auto;
+        }
+      }
+    }
+  }
+}

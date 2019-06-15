@@ -1,0 +1,44 @@
+/*-----------------------------------------------------------------------------------*/
+/* Layout
+/*-----------------------------------------------------------------------------------*/
+
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: ($spacer * 2);
+  width: 100%;
+}
+
+body.page-template-page-sidebar,
+body.page-template-page-sidebar {
+  .container {
+    @media (min-width: $breakpoint-md-min) {
+      display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .sidebar {
+      @media (max-width: $breakpoint-sm-max) {
+        margin-bottom: ($spacer * 2);
+        width: 100%;
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        min-width: 300px;
+        width: 20%;
+      }
+    }
+
+    .main {
+      @media (max-width: $breakpoint-sm-max) {
+        width: 100%;
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        max-width: 700px;
+        width: 80%;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+/*-----------------------------------------------------------------------------------*/
+/* Search
+/*-----------------------------------------------------------------------------------*/
+
+.sitesearch {
+  background: $lightblue;
+  padding: 15px 25px;
+
+  @media (max-width: $breakpoint-sm-max) {
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-end;
+  }
+}
+
+.search-form {
+  position: relative;
+
+  #s {
+    background: transparent;
+    border: 0;
+    display: inline-block;
+    height: 32px;
+    padding-right: 85px;
+    transition: all .2s ease-in-out;
+    width: 0px;
+
+    &::placeholder {
+      font-family: $zillaslab;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    &:-ms-input-placeholder {
+      font-family: $zillaslab;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    &::-ms-input-placeholder {
+      font-family: $zillaslab;
+      font-size: 16px;
+      font-style: italic;
+    }
+  }
+
+  .search-toggle {
+    background: $lightblue url(../img/icon-search.png) center center no-repeat;
+    background-size: 16px 16px;
+    color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    overflow: hidden;
+    position: absolute;
+      top: 0;
+      right: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 32px;
+  }
+
+  #search-submit {
+    background: $lightblue url(../img/icon-search.png) center center no-repeat;
+    background-size: 16px 16px;
+    color: transparent;
+    cursor: pointer;
+    display: none;
+    height: 32px;
+    margin-left: ($spacer / 4);
+    overflow: hidden;
+    position: absolute;
+      top: 0;
+      right: 25px;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 45px;
+  }
+
+  &.expanded {
+    #s {
+      background: $white;
+
+      @media (max-width: $breakpoint-sm-max) {
+        width: 100%;
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        width: 300px;
+      }
+    }
+
+    .search-toggle {
+      background-image: none;
+
+      &:after {
+        color: $white;
+        content: '×';
+        font-size: 23px;
+        line-height: 1;
+        position: absolute;
+          top: 50%;
+          left: 0;
+        transform: translate(0, -50%);
+      }
+    }
+
+    #search-submit {
+      display: block;
+    }
+  }
+}

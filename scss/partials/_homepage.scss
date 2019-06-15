@@ -1,0 +1,234 @@
+/*-----------------------------------------------------------------------------------*/
+/* Homepage
+/*-----------------------------------------------------------------------------------*/
+
+.home-panel {
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+.home-panel-intro {
+  padding: ($spacer * 4) ($spacer * 2);
+}
+
+.home-intro-text {
+  margin: 0 auto;
+  max-width: $max-width;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md-min) {
+    column-count: 2;
+    column-gap: ($spacer * 2);
+    column-width: 50%;
+  }
+}
+
+.home-panel-news {
+  background: $lightgray;
+  padding: ($spacer * 4) ($spacer * 2);
+
+  h2 {
+    margin-bottom: 0;
+
+    + p {
+      font-weight: 500;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  ul {
+    list-style-type: 0;
+    margin: ($spacer * 2) 0 0 0;
+    padding: 0;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md-min) {
+      display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    li {
+      display: block;
+      padding: 0;
+
+      @media (max-width: $breakpoint-sm-max) {
+        margin: 0;
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: ($spacer * 2);
+        }
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        margin: 0 ($spacer);
+        max-width: 300px;
+      }
+
+      a {
+        color: $black;
+      }
+
+      &:hover {
+        a {
+          color: $mediumblue;
+        }
+      }
+
+      img {
+        display: block;
+        height: auto;
+        margin: 0 auto ($spacer) auto;
+        max-width: 300px;
+        width: 100%;
+      }
+
+      p {
+
+        &:first-of-type {
+          font-family: $zillaslab;
+          font-size: 16px;
+          font-style: italic;
+          margin-bottom: ($spacer / 4);
+
+          a {
+            color: $mediumblue;
+          }
+        }
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.home-panel-history {
+  padding: 0;
+
+  @media (min-width: $breakpoint-md-min) {
+    display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
+}
+
+.home-history-section {
+
+  @media (min-width: $breakpoint-md-min) {
+    width: 50%;
+  }
+
+  &:first-child {
+    @media (max-width: $breakpoint-sm-max) {
+      padding: ($spacer * 4) ($spacer * 2);
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+      padding: 0 ($spacer * 4);
+    }
+  }
+
+  &:last-child {
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+.home-history-stats {
+  display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  margin-top: ($spacer * 2);
+
+  .home-stat {
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    .home-stat-title {
+      color: $mediumblue;
+      font-family: $zillaslab;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .home-stat-number {
+      font-family: $robotoslab;
+      font-size: 50px;
+    }
+  }
+
+  .home-stat1 {
+    margin-right: ($spacer * 2);
+    position: relative;
+
+    &:after {
+      background:url(../img/dots.png) 0 0 repeat-x;
+      background-size: 139px auto;
+      content: '';
+      height: 4px;
+      position: absolute;
+        top: 45px;
+        left: 100%;
+      transform: rotate(90deg);
+      width: 100px;
+    }
+  }
+
+  .home-stat2 {
+    margin-left: ($spacer * 3);
+  }
+}
+
+.home-panel-photos {
+  padding: 0;
+
+  @media (min-width: $breakpoint-md-min) {
+    display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
+
+  > div {
+    @media (max-width: $breakpoint-sm-max) {
+      width: 100%;
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      width: 50%;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+.home-panel-events {
+  background: $lightgray;
+  padding: ($spacer * 4) ($spacer * 2) ($spacer * 3) ($spacer * 2);
+}

@@ -1,33 +1,31 @@
 <?php get_header(); ?>
 
+<div class="container">
+
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<?php the_title();  ?>
-		</a>
-
-		<?php the_time('m/d/Y'); ?>
-
-		<?php if( comments_open() ) : ?>
-		<?php comments_popup_link( __( 'Comment', 'break' ), __( '1 Comment', 'break' ), __( '% Comments', 'break' ) ); ?>
-		<?php endif; ?>
-
-		<?php the_content( 'Continue...' ); ?>
-
-		<?php wp_link_pages(); ?>
-		<?php echo get_the_category_list(); ?>
-		<?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); ?>
+		<div class="post-preview">
+			<p class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();  ?></a></p>
+			<p class="post-date"><a href="<?php the_permalink(); ?>"><?php the_date('F j, Y'); ?></a></p>
+			<?php the_excerpt(); ?>
+		</div>
 
 	<?php endwhile; ?>
 
-		<?php previous_posts_link( 'newer' ); ?>
-		<?php next_posts_link( 'older' ); ?>
+		<div class="post-navigation">
+			<?php next_posts_link( '← Older' ); ?>
+			<?php previous_posts_link( 'Newer →' ); ?>
+		</div>
 
 <?php else : ?>
 
-		This post cannot be found.
+	<h1>404 &mdash; Page not found</h1>
+
+	<p>This page cannot be found. Try using the site search to find what you're looking for.</p>
 
 <?php endif; ?>
+
+</div>
 
 <?php get_footer(); ?>

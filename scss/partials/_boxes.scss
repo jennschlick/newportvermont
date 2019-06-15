@@ -1,0 +1,23 @@
+/*-----------------------------------------------------------------------------------*/
+/* Boxes
+/*-----------------------------------------------------------------------------------*/
+
+.bottom-box {
+  border: 3px solid $mediumgray;
+}
+
+.bottom-box-title {
+  background: $lightgray;
+  font-family: $zillaslab;
+  font-size: 18px;
+  font-style: italic;
+  padding: 5px ($spacer);
+}
+
+.bottom-box-content {
+  padding: ($spacer);
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

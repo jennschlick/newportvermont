@@ -1,0 +1,110 @@
+/*-----------------------------------------------------------------------------------*/
+/* Hero
+/*-----------------------------------------------------------------------------------*/
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-home {
+  @media (max-width: $breakpoint-sm-max) {
+    background-image: none !important;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  > img {
+    display: block;
+    height: auto;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md-min) {
+      opacity: 0;
+    }
+  }
+
+  .hero-content {
+    @media (max-width: $breakpoint-sm-max) {
+      padding: ($spacer * 2) ($spacer * 2) 0 ($spacer * 2);
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      background: $white;
+      border-radius: 100%;
+      max-width: 400px;
+      padding: ($spacer * 4) ($spacer * 2);
+      position: absolute;
+        top: 50%;
+        left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .hero-title-line1 {
+    display: block;
+    font-family: $zillaslab;
+    font-size: 20px;
+    line-height: 1;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+
+  .hero-title-line2 {
+    background: url(../img/dots.png) bottom center no-repeat;
+    background-size: 139px auto;
+    font-family: $zillaslab;
+    font-size: 62px;
+    line-height: 1;
+    padding-bottom: 25px;
+  }
+
+  .hero-text {
+    margin-top: ($spacer);
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hero-page {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 65px ($spacer * 2);
+
+  @media (min-width: $breakpoint-md-min) {
+    background-attachment: fixed;
+  }
+
+  .hero-content {
+    background: $white;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: ($spacer * 2);
+    width: 100%;
+  }
+
+  .hero-title-line1 {
+    background: url(../img/dots.png) bottom center no-repeat;
+    background-size: 139px auto;
+    display: block;
+    font-family: $zillaslab;
+    font-size: 39px;
+    line-height: 1;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+  }
+
+  .hero-title-line2 {
+    font-family: $zillaslab;
+    font-size: 20px;
+    font-style: italic;
+  }
+}

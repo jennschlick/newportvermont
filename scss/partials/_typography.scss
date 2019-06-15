@@ -1,0 +1,144 @@
+/*-----------------------------------------------------------------------------------*/
+/* Typography
+/*-----------------------------------------------------------------------------------*/
+
+// Defaults.
+body {
+  color: $default-font-color;
+  font-family: $default-font-family;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+}
+
+// Selected text.
+::selection {
+  background: $lightblue;
+}
+
+::-moz-selection {
+  background: $lightblue;
+}
+
+// Links.
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &::selection {
+    background: $lightblue;
+    color: #fff;
+  }
+
+  &::-moz-selection {
+    background: $lightblue;
+    color: #fff;
+  }
+}
+
+// Headings.
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  line-height: 1.3;
+  margin: 0 0 ($spacer) 0;
+}
+
+h1,
+.h1 {
+  font-family: $zillaslab;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h2,
+.h2 {
+  font-family: $zillaslab;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h3,
+.h3 {
+  font-size: 20px;
+}
+
+h4,
+.h4 {
+  font-size: 18px;
+}
+
+h5,
+.h5 {
+  font-size: 16px;
+}
+
+h6,
+.h6 {
+  font-size: $default-font-size;
+}
+
+// Block-level elements.
+blockquote,
+ol,
+p,
+table,
+ul {
+  margin: 0 0 ($spacer) 0;
+}
+
+// Blockquotes.
+blockquote {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: ($spacer * 3);
+  padding-right: ($spacer * 3);
+  max-width: 700px;
+  position: relative;
+  width: 100%;
+
+  &:before,
+  &:after {
+    color: $mediumblue;
+    content: '“';
+    font-family: $robotoslab;
+    font-size: 100px;
+    line-height: 0;
+    position: absolute;
+  }
+
+  &:before {
+    top: ($spacer * 2);
+    left: 0;
+  }
+
+  &:after {
+    content: '”';
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// Lists.
+ol,
+ul {
+
+  ol,
+  ul {
+    margin-top: ($spacer / 2);
+    margin-bottom: 0;
+  }
+
+  li {
+    margin: 0 0 ($spacer / 2) 0;
+    padding: 0;
+  }
+}

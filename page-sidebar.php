@@ -1,3 +1,5 @@
+<?php /* Template Name: Sidebar */ ?>
+
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
@@ -21,6 +23,9 @@
 		</div>
 
 		<div class="container">
+			<div class="sidebar">
+				<?php get_sidebar(); ?>
+			</div>
 			<div class="main">
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>

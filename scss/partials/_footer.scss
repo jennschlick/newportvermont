@@ -1,0 +1,127 @@
+/*-----------------------------------------------------------------------------------*/
+/* Footer
+/*-----------------------------------------------------------------------------------*/
+
+.footer-top {
+  background: $lightgray;
+  display: flex;
+
+  @media (max-width: $breakpoint-sm-max) {
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: ($spacer);
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 80px 130px;
+  }
+
+  > div {
+    @media (min-width: $breakpoint-md-min) {
+      width: (100% / 3);
+    }
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      @media (min-width: $breakpoint-md-min) {
+        width: 25%;
+      }
+    }
+
+    &:nth-child(2) {
+      font-weight: 500;
+
+      @media (max-width: $breakpoint-sm-max) {
+        margin-top: ($spacer * 2);
+        margin-bottom: ($spacer * 2);
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        padding-top: ($spacer * 2);
+        width: 50%;
+      }
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $breakpoint-md-min) {
+        padding-top: ($spacer * 2);
+        text-align: right;
+      }
+
+      img {
+        @media (min-width: $breakpoint-md-min) {
+          transition: all .2s ease-in-out;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: $green;
+  }
+
+  img.seal {
+    height: auto;
+    width: 168px;
+  }
+
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .menu-item-description {
+      display: none;
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      column-count: 3;
+      column-gap: ($spacer * 2);
+      column-width: 100px;
+    }
+
+    li {
+      margin: 0 0 5px 0;
+      padding: 0;
+    }
+  }
+}
+
+.footer-bottom {
+  background: $lightblue;
+  font-size: 12px;
+
+  @media (max-width: $breakpoint-sm-max) {
+    padding: ($spacer);
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    padding: ($spacer) 130px;
+  }
+
+  &,
+  a {
+    color: $white;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

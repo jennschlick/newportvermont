@@ -3,22 +3,25 @@
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php the_title(); ?>
-		<?php the_time('m.d.Y'); ?>
-		<?php the_author(); ?>
-		<?php the_content(); ?>
-		<?php wp_link_pages(); ?>
-		<?php echo get_the_category_list(); ?>
-		<?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); ?></div>
+		<div class="container">
+			<div class="post-breadcrumb">
+				<a href="<?php echo site_url(); ?>/category/latest-news/">News</a>
+			</div>
+			<div class="post-full">
+				<h2><?php the_title(); ?></h2>
+				<p class="post-date"><?php the_date('F j, Y'); ?></p>
+				<?php the_content(); ?>
+			</div>
+		</div>
 
 	<?php endwhile; ?>
 
-	<?php if ( comments_open() || '0' != get_comments_number() ) comments_template( '', true ); ?>
-
 <?php else : ?>
 
-	This post cannot be found.
-	
+	<h1>404 &mdash; Page not found</h1>
+
+	<p>This page cannot be found. Try using the site search to find what you're looking for.</p>
+
 <?php endif; ?>
 
 <?php get_footer(); ?>

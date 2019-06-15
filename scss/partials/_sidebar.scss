@@ -1,0 +1,61 @@
+/*-----------------------------------------------------------------------------------*/
+/* Pages
+/*-----------------------------------------------------------------------------------*/
+
+.sidebar {
+  background: $lightgray;
+  margin-right: 70px;
+  padding: ($spacer * 2) ($spacer);
+
+  > p {
+    font-family: $zillaslab;
+    font-size: 18px;
+    margin-left: ($spacer);
+    margin-bottom: ($spacer / 2);
+
+    &,
+    a {
+      color: $mediumblue;
+    }
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    background: $lightgray;
+
+    li {
+      font-size: 15px;
+
+      a {
+        color: $black;
+        display: block;
+        font-weight: 500;
+        padding: ($spacer / 4) ($spacer);
+
+        &:hover {
+          background: $white;
+        }
+      }
+
+      &.current_page_item {
+        > a {
+          background: $white;
+        }
+      }
+    }
+
+    ul {
+      > li {
+        > a {
+          padding-left: ($spacer * 3);
+        }
+      }
+    }
+  }
+}

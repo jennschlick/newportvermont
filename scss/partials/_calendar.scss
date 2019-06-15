@@ -1,0 +1,135 @@
+/*-----------------------------------------------------------------------------------*/
+/* Calendar
+/*-----------------------------------------------------------------------------------*/
+
+.simcal-calendar {
+  > p.simcal-align-right {
+    display: none;
+  }
+}
+
+.simcal-default-calendar-list {
+  margin: 0 auto !important;
+  max-width: 800px !important;
+  padding: 0 !important;
+
+  ul.simcal-events {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    li.simcal-event {
+      margin: 0 !important;
+    }
+  }
+}
+
+.simcal-events-list-container {
+  display: flex !important;
+    flex-flow: row wrap !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+  margin: 0 !important;
+
+  .simcal-day {
+    background: $white !important;
+    margin-bottom: ($spacer * 2) !important;
+    padding: ($spacer) !important;
+    text-align: center !important;
+    width: 47% !important;
+
+    .simcal-event-details {
+      font-size: 16px !important;
+
+      p {
+        margin-bottom: 5px !important;
+
+        &:nth-child(1) {
+          color: $mediumblue !important;
+          font-family: $zillaslab !important;
+          font-style: italic !important;
+        }
+      }
+
+      a {
+        color: $black;
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+
+      *:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  > p {
+    display: block !important;
+    margin: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+
+.simcal-default-calendar.simcal-default-calendar-light {
+  .simcal-calendar-head {
+    display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    padding-bottom: ($spacer * 2) !important;
+
+    .simcal-nav {
+      width: auto !important;
+
+      &.simcal-current {
+        h3 {
+          background: $lightblue;
+          color: $white;
+          display: inline-block;
+          font-size: 16px;
+          line-height: 1;
+          padding: 7px 10px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .simcal-nav-button {
+    border: 1px solid $green !important;
+    border-radius: 100% !important;
+    color: $green !important;
+    font-size: 11px !important;
+    height: 25px !important;
+    line-height: 25px !important;
+    width: 25px !important;
+
+    &:disabled,
+    &:disabled:hover {
+      background: transparent !important;
+      border-color: #ccc !important;
+      color: #ccc !important;
+    }
+
+    &:hover {
+      background: $green !important;
+      color: $white !important;
+    }
+
+    &.simcal-prev {
+      margin-right: ($spacer) !important;
+
+      &:hover {
+        margin-left: 0 !important;
+      }
+    }
+
+    &.simcal-next {
+      margin-left: ($spacer) !important;
+
+      &:hover {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}

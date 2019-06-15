@@ -1,0 +1,37 @@
+/*-----------------------------------------------------------------------------------*/
+/* Header
+/*-----------------------------------------------------------------------------------*/
+
+.header {
+  display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+  @media (max-width: $breakpoint-sm-max) {
+    align-items: center;
+    padding: ($spacer) 0 ($spacer) ($spacer);
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    align-items: flex-end;
+    position: relative;
+    padding: 30px 100px 40px 60px;
+  }
+
+  .logo {
+    a,
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+
+      @media (max-width: $breakpoint-sm-max) {
+        max-width: 250px;
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        max-width: 350px;
+      }
+    }
+  }
+}
