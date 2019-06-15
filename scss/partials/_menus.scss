@@ -186,6 +186,14 @@ ul.menu {
 }
 
 .container {
+  .sidebar {
+    .menu {
+      .menu-image,
+      .menu-item-description {
+        display: none;
+      }
+    }
+  }
   .main {
     ul.menu {
       display: flex;
