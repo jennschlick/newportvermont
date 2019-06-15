@@ -5,6 +5,7 @@
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
+		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="hero hero-page"<?php if ( has_post_thumbnail() ) : ?> style="background-image:url(<?php the_post_thumbnail_url('full'); ?>);"<?php endif; ?>>
 			<?php if ( get_field('hero_title_line1') || get_field('hero_title_line2') || get_field('hero_text') ) : ?>
 				<div class="hero-content">
@@ -21,6 +22,7 @@
 				</div>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 
 		<div class="container">
 			<div class="sidebar">

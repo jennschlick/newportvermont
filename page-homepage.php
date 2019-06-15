@@ -3,6 +3,7 @@
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
+		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="hero hero-home"<?php if ( has_post_thumbnail() ) : ?> style="background-image:url(<?php the_post_thumbnail_url('full'); ?>);"<?php endif; ?>>
 			<?php if ( has_post_thumbnail() ) : ?><?php echo the_post_thumbnail('full'); ?><?php endif; ?>
 			<?php if ( get_field('hero_title_line1') || get_field('hero_title_line2') || get_field('hero_text') ) : ?>
@@ -25,6 +26,7 @@
 				</div>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 
 		<?php if ( get_field('home_intro_title') || get_field('home_intro_text')) : ?>
 		<div class="home-panel home-panel-intro">
