@@ -99,6 +99,22 @@
           text-transform: uppercase;
         }
       }
+
+      .simcal-nav-button {
+        [class*=" simcal-icon-"],
+        [class^=simcal-icon-] {
+          position: relative;
+            top: -1px;
+        }
+
+        .simcal-icon-right {
+          right: -1px;
+        }
+
+        .simcal-icon-left {
+          left: -1px;
+        }
+      }
     }
   }
 

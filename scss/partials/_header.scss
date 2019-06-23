@@ -9,13 +9,13 @@
 
   @media (max-width: $breakpoint-sm-max) {
     align-items: center;
-    padding: ($spacer) 0 ($spacer) ($spacer);
+    padding: ($spacer / 2) 0 ($spacer / 2) ($spacer / 2);
   }
 
   @media (min-width: $breakpoint-md-min) {
     align-items: flex-end;
     position: relative;
-    padding: 30px 100px 40px 60px;
+    padding: ($spacer) 100px ($spacer) 60px;
   }
 
   .logo {
@@ -26,7 +26,7 @@
       width: 100%;
 
       @media (max-width: $breakpoint-sm-max) {
-        max-width: 250px;
+        max-width: 200px;
       }
 
       @media (min-width: $breakpoint-md-min) {

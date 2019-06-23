@@ -138,7 +138,20 @@ ul.menu {
 }
 
 #menu-homepage-menu {
+  display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
   text-align: center;
+
+  @media (max-width: $breakpoint-sm-max) {
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  @media (min-width: $breakpoint-md-min) {
+    justify-content: center;
+  }
 
   li {
     font-size: 16px;
@@ -146,17 +159,14 @@ ul.menu {
     text-align: center;
 
     @media (max-width: $breakpoint-sm-max) {
-      display: block;
-
-      &:not(:last-child) {
-        margin-bottom: ($spacer);
-      }
+      width: 50%;
     }
 
     @media (min-width: $breakpoint-md-min) {
-      display: inline-block;
       margin-left: ($spacer);
       margin-right: ($spacer);
+      max-width: 200px;
+      width: auto;
     }
   }
 

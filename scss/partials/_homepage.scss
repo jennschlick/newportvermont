@@ -151,6 +151,7 @@
     align-items: flex-start;
     justify-content: center;
   margin-top: ($spacer * 2);
+  width: 100%;
 
   .home-stat {
     text-align: center;
@@ -170,8 +171,15 @@
     .home-stat-title {
       color: $mediumblue;
       font-family: $zillaslab;
-      font-size: 16px;
       font-style: italic;
+
+      @media (max-width: $breakpoint-sm-max) {
+        font-size: 13px;
+      }
+
+      @media (min-width: $breakpoint-md-min) {
+        font-size: 16px;
+      }
     }
 
     .home-stat-number {
@@ -181,24 +189,39 @@
   }
 
   .home-stat1 {
-    margin-right: ($spacer * 2);
     position: relative;
+    width: 50%;
+
+    @media (max-width: $breakpoint-sm-max) {
+
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+
+    }
 
     &:after {
-      background:url(../img/dots.png) 0 0 repeat-x;
-      background-size: 139px auto;
+      background:url(../img/dots-vertical.png) 0 0 repeat-y;
+      background-size: auto 139px;
       content: '';
-      height: 4px;
+      height: 100px;
       position: absolute;
-        top: 45px;
-        left: 100%;
-      transform: rotate(90deg);
-      width: 100px;
+        top: 0;
+        right: -10px;
+      width: 4px;
     }
   }
 
   .home-stat2 {
-    margin-left: ($spacer * 3);
+    width: 50%;
+
+    @media (max-width: $breakpoint-sm-max) {
+
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+
+    }
   }
 }
 
@@ -218,6 +241,12 @@
 
     @media (min-width: $breakpoint-md-min) {
       width: 50%;
+    }
+
+    &:first-of-type {
+      @media (max-width: $breakpoint-sm-max) {
+        display: none;
+      }
     }
 
     img {

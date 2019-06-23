@@ -55,6 +55,7 @@ h1,
   font-family: $zillaslab;
   font-size: 30px;
   font-weight: 400;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -63,6 +64,7 @@ h2,
   font-family: $zillaslab;
   font-size: 24px;
   font-weight: 400;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -84,6 +86,13 @@ h5,
 h6,
 .h6 {
   font-size: $default-font-size;
+}
+
+.post-full {
+  h1 {
+    letter-spacing: none;
+    text-transform: none;
+  }
 }
 
 // Block-level elements.

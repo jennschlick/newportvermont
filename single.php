@@ -8,7 +8,7 @@
 				<a href="<?php echo site_url(); ?>/category/latest-news/">News</a>
 			</div>
 			<div class="post-full">
-				<h2><?php the_title(); ?></h2>
+				<h1><?php the_title(); ?></h1>
 				<p class="post-date"><?php the_date('F j, Y'); ?></p>
 				<?php the_content(); ?>
 			</div>

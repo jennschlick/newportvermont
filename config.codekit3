@@ -75,11 +75,22 @@
 		"oAP": "/header.php",
 		"oF": 0
 		},
-	"/img/dots.png": {
+	"/img/dots-horizontal.png": {
 		"ft": 32768,
 		"iS": 303,
 		"oA": 0,
-		"oAP": "/img/dots.png",
+		"oAP": "/img/dots-horizontal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/img/dots-vertical.png": {
+		"ft": 32768,
+		"iS": 1081,
+		"oA": 0,
+		"oAP": "/img/dots-vertical.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
