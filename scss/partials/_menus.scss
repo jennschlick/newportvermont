@@ -80,7 +80,6 @@ ul.menu {
       &:active,
       &:focus,
       &:hover {
-        background: $lightgray;
         color: $black;
       }
     }
@@ -90,6 +89,7 @@ ul.menu {
       &:focus,
       &:hover {
         > a {
+          background: $lightgray;
           color: $black;
         }
       }
@@ -103,7 +103,7 @@ ul.menu {
         flex-flow: row;
         align-items: flex-start;
         justify-content: center;
-        margin-top: -40px;
+        margin-top: -3px;
         padding-top: ($spacer * 2);
         padding-bottom: ($spacer * 2);
         position: absolute;
@@ -125,6 +125,11 @@ ul.menu {
           > .sub-menu {
             font-weight: 400;
             margin-top: ($spacer / 2);
+
+            > li {
+              font-family: $roboto;
+              font-size: 14px;
+            }
           }
         }
       }

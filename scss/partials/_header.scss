@@ -2,20 +2,21 @@
 /* Header
 /*-----------------------------------------------------------------------------------*/
 
-.header {
+#header {
+  background: $white;
   display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 
   @media (max-width: $breakpoint-sm-max) {
     align-items: center;
-    padding: ($spacer / 2) 0 ($spacer / 2) ($spacer / 2);
+    padding: ($spacer / 2) 0 ($spacer / 2) ($spacer * 2);
   }
 
   @media (min-width: $breakpoint-md-min) {
     align-items: flex-end;
     position: relative;
-    padding: ($spacer) 100px ($spacer) 60px;
+    padding: ($spacer) ($spacer) ($spacer) ($spacer * 3);
   }
 
   .logo {
@@ -26,11 +27,58 @@
       width: 100%;
 
       @media (max-width: $breakpoint-sm-max) {
-        max-width: 200px;
+        max-width: 170px;
       }
 
       @media (min-width: $breakpoint-md-min) {
         max-width: 350px;
+      }
+    }
+  }
+
+  &.sticky {
+    align-items: stretch;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .1);
+    height: 65px;
+    padding: 0 0 0 ($spacer * 2);
+    position: fixed;
+      top: 0;
+    width: 100%;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-sm-max) {
+      .menu-toggle {
+        display: flex;
+          align-items: center;
+      }
+    }
+
+    @media (min-width: $breakpoint-md-min) {
+      padding-right: ($spacer);
+
+      #main-menu {
+        display: flex;
+          align-items: stretch;
+
+        > ul {
+          display: flex;
+            align-items: stretch;
+
+          > li {
+            display: flex;
+              align-items: center;
+          }
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+        align-items: center;
+
+      a,
+      img {
+        max-width: 170px;
       }
     }
   }

@@ -20,7 +20,7 @@
 <div class="sitesearch">
   <?php get_search_form(); ?>
 </div>
-<header class="header">
+<header id="header">
   <div class="logo">
     <a href="<?php echo site_url(); ?>">
       <img src="<?php echo get_template_directory_uri(); ?>/img/newport-vermont.png" alt="Newport Vermont">

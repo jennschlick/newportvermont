@@ -50,7 +50,7 @@ $module: '.mm';
     left: 0;
     width: 80%;
     min-width: 200px;
-    max-width: 440px;
+    max-width: 250px;
     overflow: hidden;
     color: var(--mm-arrow-color);
     background: $white;
@@ -179,21 +179,22 @@ $module: '.mm';
             display: none;
         }
 
-        //  The arrow.
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: calc(var(--mm-item-height) / 2.2);
-            right: calc(var(--mm-item-height) / 2);
-            z-index: 0;
-            width: var(--mm-arrow-size);
-            height: var(--mm-arrow-size);
-            border: 0px solid var(--mm-arrow-color);
-            border-top-width: var(--mm-arrow-weight);
-            border-right-width: var(--mm-arrow-weight);
-            border-bottom-width: 0;
-            transform: rotate(45deg) translate(0, -50%);
+        &.menu-item-has-children {
+          &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: calc(var(--mm-item-height) / 2.2);
+              right: calc(var(--mm-item-height) / 2);
+              z-index: 0;
+              width: var(--mm-arrow-size);
+              height: var(--mm-arrow-size);
+              border: 0px solid var(--mm-arrow-color);
+              border-top-width: var(--mm-arrow-weight);
+              border-right-width: var(--mm-arrow-weight);
+              border-bottom-width: 0;
+              transform: rotate(45deg) translate(0, -50%);
+          }
         }
     }
 }
@@ -203,11 +204,11 @@ $module: '.mm';
     li {
       border-bottom: 1px solid $mediumgray;
 
-      &:not(.menu-item-has-children) {
-        &:hover {
-          &:after {
-            display: none;
-          }
+      &:active,
+      &:focus,
+      &:hover {
+        a {
+          background: none !important;
         }
       }
     }
@@ -233,12 +234,6 @@ $module: '.mm';
         &:not(:last-child) {
             width: calc(100% - 50px);
             border-right-width: 0;
-        }
-
-        &:active,
-        &:focus,
-        &:hover {
-          background: none !important;
         }
     }
 
