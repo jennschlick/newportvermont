@@ -14,7 +14,7 @@ jQuery(function($) {
 document.addEventListener(
 "DOMContentLoaded", () => {
   const menu = mmlight( document.querySelector( "#main-menu" ) );
-  menu.create( "(max-width: 999px)" );
+  menu.create( "(max-width: 1199px)" );
   menu.init( "Selected" );
 
   document.querySelector( "a[href='#main-menu']" )

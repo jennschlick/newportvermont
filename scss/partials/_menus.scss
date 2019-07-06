@@ -68,16 +68,20 @@ ul.menu {
       display: inline-block;
       font-size: 16px;
       font-weight: 500;
-      margin-left: ($spacer);
     }
 
     a {
       color: $black;
 
+      @media (min-width: $breakpoint-md-min) {
+        padding: ($spacer);
+      }
+
       &:active,
       &:focus,
       &:hover {
-        color: $green;
+        background: $lightgray;
+        color: $black;
       }
     }
 
@@ -86,14 +90,14 @@ ul.menu {
       &:focus,
       &:hover {
         > a {
-          color: $green;
+          color: $black;
         }
       }
     }
 
     > .sub-menu {
       @media (min-width: $breakpoint-md-min) {
-        background: $white;
+        background: $lightgray;
         box-shadow: 0 2px 0 rgba(0, 0, 0, .1);
         display: none;
         flex-flow: row;
@@ -110,11 +114,12 @@ ul.menu {
 
         > li {
           display: inline-block;
+          font-family: $zillaslab;
           margin-left: ($spacer);
           margin-right: ($spacer);
 
           > a {
-            color: $green;
+            color: $mediumblue;
           }
 
           > .sub-menu {

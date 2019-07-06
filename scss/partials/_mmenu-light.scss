@@ -85,6 +85,7 @@ $module: '.mm';
         border-top-width: var(--mm-arrow-weight);
         border-left-width: var(--mm-arrow-weight);
         transform: rotate(-45deg) translate(50%, -50%);
+        z-index: 1;
     }
 
     &#{$module}--home {
@@ -98,14 +99,16 @@ $module: '.mm';
 
     //  Title.
     &:after {
+        background: $lightgray;
+        color: $mediumblue;
         content: attr(data-mm-title);
         display: block;
+        font-family: $zillaslab;
         font-size: 16px;
-        font-weight: 500;
         position: absolute;
         top: 0;
-        left: calc(var(--mm-item-indent) + (var(--mm-arrow-size) * 2));
-        right: calc(var(--mm-item-indent) + (var(--mm-arrow-size) * 2));
+        left: 0;
+        right: 0;
         line-height: var(--mm-navbar-height);
         text-align: center;
         overflow: hidden;
@@ -173,6 +176,7 @@ $module: '.mm';
             z-index: 12;
             border: inherit;
             border-top-width: 1px;
+            display: none;
         }
 
         //  The arrow.
@@ -180,7 +184,7 @@ $module: '.mm';
             content: '';
             display: block;
             position: absolute;
-            top: calc(var(--mm-item-height) / 1.4);
+            top: calc(var(--mm-item-height) / 2.2);
             right: calc(var(--mm-item-height) / 2);
             z-index: 0;
             width: var(--mm-arrow-size);
@@ -196,6 +200,18 @@ $module: '.mm';
 
 //  Anchors.
 #{$module} {
+    li {
+      border-bottom: 1px solid $mediumgray;
+
+      &:not(.menu-item-has-children) {
+        &:hover {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
     a,
     span {
         @extend %mm-reset;
@@ -203,8 +219,6 @@ $module: '.mm';
 
         position: relative;
         z-index: 1;
-        padding: calc((var(--mm-item-height) - var(--mm-line-height)) / 2)
-            var(--mm-item-indent);
     }
 
     a {
@@ -212,11 +226,19 @@ $module: '.mm';
         color: inherit;
         font-size: 16px;
         font-weight: 500;
+        padding: calc((var(--mm-item-height) - var(--mm-line-height)) / 2)
+            var(--mm-item-indent);
 
         //  Show arrow for opening the submenu.
         &:not(:last-child) {
             width: calc(100% - 50px);
-            border-right-width: 1px;
+            border-right-width: 0;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+          background: none !important;
         }
     }
 
