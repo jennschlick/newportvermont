@@ -46,6 +46,17 @@ add_filter( 'walker_nav_menu_start_el', 'newport_nav_description', 10, 4 );
 /*-----------------------------------------------------------------------------------*/
 
 function newport_register_sidebars() {
+  register_sidebar(array(
+		'id' => 'content',
+		'name' => 'Content',
+		'description' => '',
+		'before_widget' => '<div class="content-widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+		'empty_title'=> '',
+	));
+
 	register_sidebar(array(
 		'id' => 'sidebar',
 		'name' => 'Sidebar',
