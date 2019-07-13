@@ -184,3 +184,40 @@ function newport_json_save_point( $path ) {
   return $path;
 }
 add_filter('acf/settings/save_json', 'newport_json_save_point');
+
+/*-----------------------------------------------------------------------------------*/
+/* Document attachment functions from the Pressville theme
+/*-----------------------------------------------------------------------------------*/
+
+// Get document attachments
+if ( ! function_exists( 'lsvr_pressville_get_document_attachments' ) ) {
+	function lsvr_pressville_get_document_attachments( $post_id ) {
+		if ( function_exists( 'lsvr_documents_get_document_attachments' ) ) {
+			return lsvr_documents_get_document_attachments( $post_id );
+		}
+	}
+}
+
+// Has document attachments
+if ( ! function_exists( 'lsvr_pressville_has_document_attachments' ) ) {
+	function lsvr_pressville_has_document_attachments( $post_id ) {
+		$attachments = lsvr_pressville_get_document_attachments( $post_id );
+		return ! empty( $attachments ) ? true : false;
+	}
+}
+
+
+// Document attachments
+if ( ! function_exists( 'lsvr_pressville_the_document_attachments' ) ) {
+	function lsvr_pressville_the_document_attachments( $post_id ) {
+		$document_attachments = lsvr_pressville_get_document_attachments( $post_id );
+		if ( ! empty( $document_attachments ) ) { ?>
+				<?php foreach ( $document_attachments as $attachment ) : ?>
+					<div class="wp-block-file">
+						<a href="<?php echo esc_url( $attachment['url'] ); ?>" target="_blank"><?php echo esc_html($attachment['filename'] ); ?></a> <a href="<?php echo esc_url( $attachment['url'] ); ?>" target="_blank" class="wp-block-file__button">Download</a>
+					</div>
+				<?php endforeach; ?>
+		<?php }
+
+	}
+}
