@@ -31,9 +31,9 @@
 			<div class="main">
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
-				<?php if ( is_active_sidebar('content')) { ?>
+				<div class="content-widgets">
 					<?php dynamic_sidebar('content'); ?>
-				<?php } ?>
+				</div>
 				<?php if( have_rows('bottom_box') ):
 					while( have_rows('bottom_box') ): the_row(); ?>
 						<?php if (get_sub_field('bottom_box_title') || get_sub_field('bottom_box_content')) : ?>

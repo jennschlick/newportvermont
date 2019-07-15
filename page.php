@@ -27,7 +27,9 @@
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 				<?php if ( is_active_sidebar('content')) { ?>
-					<?php dynamic_sidebar('content'); ?>
+					<div class="content-widgets">
+						<?php dynamic_sidebar('content'); ?>
+					</div>
 				<?php } ?>
 				<?php if( have_rows('bottom_box') ):
 					while( have_rows('bottom_box') ): the_row(); ?>

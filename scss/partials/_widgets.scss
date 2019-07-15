@@ -2,17 +2,24 @@
 /* Widgets
 /*-----------------------------------------------------------------------------------*/
 
+.content-widgets {
+  @media (min-width: $breakpoint-md-min) {
+    display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+  }
+}
+
 .content-widget {
   padding: ($spacer) 0;
 
   @media (min-width: $breakpoint-md-min) {
     display: inline-block;
-    max-width: 50%;
 
     &:last-of-type {
       border-left: 1px solid $mediumgray;
-      padding-left: ($spacer * 4);
-      margin-left: ($spacer * 4);
+      padding-left: ($spacer * 2);
+      margin-left: ($spacer * 2);
     }
   }
 
