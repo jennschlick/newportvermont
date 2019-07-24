@@ -42,3 +42,12 @@ body.page-template-page-sidebar {
     }
   }
 }
+
+.tailor-element {
+  iframe {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+  }
+}
